@@ -1,0 +1,303 @@
+'use strict';
+/*
+let hasDriversLicense = false;
+const passTest = true;
+
+if (passTest) hasDriversLicense = true;
+if (hasDriversLicense) console.log('I can drive');
+
+// const interface = 'Audio';
+// const private_number = 534;
+// const if = 23;
+*/
+
+/*
+function logger() {
+    console.log('My name is Jonas');
+}
+
+// calling / running / invoking function
+logger();
+logger();
+logger();
+//everytime we call the function the code will be executed
+// reuse code, recieve data, return data
+
+function fruitProcessor(apples, oranges) {
+    const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+    return juice;
+}
+
+//const appleJuice =
+console.log(fruitProcessor(5, 0));
+//console.log(appleJuice);
+
+const appleOrangeJuice = fruitProcessor(2, 4);
+console.log(appleOrangeJuice);
+
+function calcAge1(birthYear) {
+    const age = 2037 - birthYear;
+    return age;
+}
+// We can make this even simpler
+
+// example of function declaration
+function calcAge1(birthYear) {
+    return 2037 - birthYear;
+}
+
+const age1 = calcAge1(1987); // argument is actual value
+console.log(age1);
+
+
+
+// example of function expression
+const calcAge2 = function (birthYear) {
+    return 2037 - birthYear;
+}
+
+const age2 = calcAge2(1987);
+console.log(age1, age2);
+*/
+
+/*
+// Arrow function - shorter and faster to write
+
+const calcAge2 = function (birthYear) {
+    return 2037 - birthYear;
+}
+
+const calcAge3 = birthYear => 2037 - birthYear;
+//return happens implicitly, no need to type return
+//no () or {}
+//useful for simple one line codes with one parameter
+const age3 = calcAge3(1987);
+console.log(age3);
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = 2037 - birthYear;
+    const retirement = 65 - age;
+    //return retirement;
+    return `${firstName} retires in ${retirement} years`;
+}
+//with multiple lines we must again use return to give us the value we want
+
+console.log(yearsUntilRetirement(1987, 'Stuart'));
+console.log(yearsUntilRetirement(1980, 'Bob'));
+*/
+
+/*
+function cutFruitPieces(fruit) {
+    return fruit * 100;
+}
+
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+    return juice;
+}
+console.log(fruitProcessor(2, 3));
+*/
+
+/*
+const calcAge = function (birthYear) {
+    return 2037 - birthYear;
+}
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+    const age = calcAge(birthYear);
+    const retirement = 65 - age;
+
+    if (retirement > 0) {
+        console.log(`${firstName} retires in ${retirement} years`);
+        return retirement;
+    } else {
+        console.log(`${firstName} has already retired`);
+        return 7777;
+    }
+}
+console.log(yearsUntilRetirement(1987, 'Stuart'));
+console.log(yearsUntilRetirement(1940, 'Mike'));
+
+// The variables are independant in each function so they can have the same name
+*/
+/*
+// Arrays - bundle variables together in a 'container'
+
+const friend1 = 'Mike';
+const friend2 = 'Stubs';
+const friend3 = 'Squeeb';
+
+// 2 ways to declare arrays
+
+const friends = ['Mike', 'Stubs', 'Squeeb',];
+console.log(friends);
+
+const y = new Array(1991, 1987, 2008, 2043);
+console.log(y);
+
+// first element is 0 then 1, 2 3, etc
+console.log(friends[0]);
+console.log(friends[2]);
+
+// shows how many elements are in the array
+console.log(friends.length);
+// [] we can ask the array for anything inside these brackets
+console.log(friends[friends.length - 1]);
+
+// can also add elements to the array using []
+friends[2] = 'Jay';
+friends[3] = 'Squeeb'; // can also add to original array
+console.log(friends);
+
+// even though we declared the array as const we can mutate them as arrays are not primitve objects, we can change individual elements but not the whole array
+
+// can hold different types, expressions and variables
+const firstName = 'Jonas'
+const jonas = [firstName, 'Cantspell', 2037 - 1991, 'teacher', friends];
+console.log(jonas);
+*/
+/*
+// Exercise
+const calcAge = function (birthYear) {
+    return 2037 - birthYear;
+}
+const years = [1990, 1987, 2002, 2010, 2100];
+
+// choose which array elements we want to pass into the function
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+// store new values in new array
+const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
+console.log(ages);
+
+
+// cannot pass years to the function as its an array and the function is expecting a single value
+// result = NaN not a number cannot really do operations with arrays
+*/
+/*
+const friends = ['Mike', 'Stubs', 'Squeeb',];
+// add elements to end of array
+const newLength = friends.push('Jay');
+console.log(friends);
+console.log(newLength);
+// add elements to beginning of array
+friends.unshift('Billybob');
+console.log(friends);
+
+// remove elements
+friends.pop(); // last element
+const popped = friends.pop(); // pop returns removed element
+console.log(friends);
+console.log(popped);
+console.log(friends);
+
+friends.shift(); // removes first element
+console.log(friends);
+
+// find a particular element
+console.log(friends.indexOf('Stubs'));
+console.log(friends.indexOf('Stub')); // will log -1 as doesnt exist in array
+
+// return true if element is in array and false if not
+console.log(friends.includes('Stubs')); // true
+console.log(friends.includes('Stub')); // false
+// tests with strict eqaulity
+friends.push(23); // number
+console.log(friends.includes('23')); // is a string so will return false
+console.log(friends.includes(23)); // is a number so will return true
+
+// can use includes to do conditionals
+
+if (friends.includes('Stubs')) {
+    console.log('You have a friend called Stubs');
+} else {
+    console.log('You are a loser with no friends');
+}
+*/
+
+// OBJECTS - retrieving and changing data
+/*
+const stubs = {
+    firstName: 'Stubs',
+    lastName: 'McSqueeb',
+    age: 2037 - 1987,
+    job: 'Alpha Dawg',
+    friends: ['Jepu', 'Reynard', 'Scareface']
+}
+console.log(stubs);
+
+console.log(stubs.lastName);
+console.log(stubs['lastName']);
+
+const nameKey = 'Name';
+console.log(stubs['first' + nameKey]);
+console.log(stubs['last' + nameKey]);
+
+// if we need to compute something we need to use the bracket notation, in other situations use . notation
+
+const interestedIn = prompt('What do you want to know about Stubs? Choose between firstName, lastName, age, job and friends');
+
+if (stubs[interestedIn]) {
+    console.log(stubs[interestedIn]);
+} else {
+    console.log('Cant you read bitch');
+}
+
+stubs.location = 'London'; // adds to object
+stubs['email'] = '@gmail.com'; // adds to object
+console.log(stubs);
+
+console.log(`${stubs.firstName} has ${stubs.friends.length} friends, and his best friend is called ${stubs.friends[0]}`);
+*/
+/*
+// Adding functions to objects
+
+const stubs = {
+    firstName: 'Stubs',
+    lastName: 'McSqueeb',
+    birthYear: 1987,
+    job: 'Alpha Dawg',
+    friends: ['Jepu', 'Reynard', 'Scareface'],
+    hasDriversLicense: false,
+
+    //calcAge: function (birthYear) { // function as key
+    // return 2037 - birthYear;   // called a method
+    //}
+
+    // calcAge: function () {
+    //     return 2037 - this.birthYear
+    // }
+
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+
+    describeStubs: function () {
+        return `${this.firstName} is a ${this.calcAge()}-years old ${this.job} and he has ${this.hasDriversLicense ? 'a' : 'no'} drivers license`;
+    }
+}
+
+// can only do this with expressions not declarations
+
+console.log(stubs.calcAge()); // no parameter needed
+
+console.log(stubs.age);
+console.log(stubs.age);
+console.log(stubs.age);
+
+console.log(stubs.describeStubs());
+*/
+
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep}`);
+}
+
+// for loop needs let ... ; condition ; iteration change
